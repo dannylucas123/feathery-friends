@@ -9,11 +9,11 @@ import {
   Param,
   Delete,
 } from '@nestjs/common';
-import { Roles } from 'src/decorators/roles.decorator';
+import { Roles } from 'apps/feathery-friends-snap/src/decorators/roles.decorator';
+import { Role } from 'apps/feathery-friends-snap/src/enums/role.enum';
 import { Profile } from '../schemas/Profile';
 import { ProfileService } from '../services/profile';
 import { UpdateProfileDto } from '../dto/profile';
-import { Role } from 'src/enums/role.enum';
 
 @Controller('profiles')
 export class ProfileController {
