@@ -7,9 +7,6 @@ export class RegisterUserDto {
 
   @IsNotEmpty()
   password: string;
-
-  @IsNotEmpty()
-  display: string;
 }
 
 export class LoginUserDto extends PickType(RegisterUserDto, [

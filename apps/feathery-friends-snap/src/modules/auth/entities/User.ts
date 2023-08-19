@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity()
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
@@ -12,5 +12,5 @@ export class User {
   password: string;
 
   @Column()
-  isActive: boolean;
+  isActive: number;
 }

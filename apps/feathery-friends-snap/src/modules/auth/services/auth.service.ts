@@ -21,6 +21,7 @@ export class AuthService {
       const result = await this.userRepository.insert({
         username: registerUserDto.username,
         password: registerUserDto.password,
+        isActive: 1,
       });
       return result.raw;
     } catch (err) {
