@@ -1,11 +1,10 @@
 import { JwtModule } from '@nestjs/jwt';
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 import { ProfileModule } from '../profiles/profile.module';
 import { AuthService } from './services/auth.service';
 import { AuthController } from './controllers/auth.controller';
-import { User } from './entities/User';
+import { UserModule } from '../user/user.module';
 
 @Module({
   imports: [
@@ -17,7 +16,7 @@ import { User } from './entities/User';
       }),
       inject: [ConfigService],
     }),
-    TypeOrmModule.forFeature([User]),
+    UserModule,
   ],
   providers: [AuthService],
   controllers: [AuthController],

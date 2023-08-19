@@ -9,7 +9,7 @@ import { LoginUserDto, RegisterUserDto } from '../dto/auth.request.dto';
 import { AuthService } from '../services/auth.service';
 import { LoginUserResponseDto } from '../dto/auth.response.dto';
 import { NoAuth } from 'apps/feathery-friends-snap/src/decorators/noauth.decorator';
-import { User } from '../entities/User';
+import { User } from '../../user/entities/User';
 
 @Controller('auth')
 @NoAuth()

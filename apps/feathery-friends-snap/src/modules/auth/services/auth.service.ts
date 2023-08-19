@@ -5,7 +5,7 @@ import { Repository } from 'typeorm';
 import { Role } from 'apps/feathery-friends-snap/src/enums/role.enum';
 import { RegisterUserDto } from '../dto/auth.request.dto';
 import { LoginUserResponseDto } from '../dto/auth.response.dto';
-import { User } from '../entities/User';
+import { User } from '@app/common/entities/User';
 
 @Injectable()
 export class AuthService {
