@@ -8,7 +8,7 @@
     "tsConfigPath": "apps/feathery-friends-snap/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/feathery-friends",
+  "root": "apps/feathery-friends-snap",
   "projects": {
     "feathery-friends-snap": {
       "type": "application",
