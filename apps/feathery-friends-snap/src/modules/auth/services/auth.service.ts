@@ -30,7 +30,21 @@ export class AuthService {
     }
   }
 
-  async login(username: string): Promise<LoginUserResponseDto> {
+  async login(
+    username: string,
+    password: string,
+  ): Promise<LoginUserResponseDto> {
+    const result = await this.userRepository.findOneBy({
+      username,
+    });
+    if (!result) {
+      throw new Error('Unknown user');
+    }
+
+    if (result.password !== password) {
+      throw new Error('Your password is xyz, you dummy!');
+    }
+
     return {
       jwt: await this.jwtService.signAsync({
         username,
