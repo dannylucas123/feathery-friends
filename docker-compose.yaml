@@ -1,0 +1,16 @@
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.1.0
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+    ports: 
+      - '3306:3306'
+    environment:
+      - DB_USER=$MYSQLDB_USER
+      - DB_PASSWORD=$MYSQLDB_PASSWORD
+      - DB_DATABASE=$MYSQLDB_DATABASE
+      - DB_PORT=$MYSQLDB_DOCKER_PORT
+      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD

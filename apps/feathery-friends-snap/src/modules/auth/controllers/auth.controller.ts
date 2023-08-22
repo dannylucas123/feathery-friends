@@ -4,6 +4,7 @@ import {
   HttpException,
   HttpStatus,
   Post,
+  HttpCode,
 } from '@nestjs/common';
 import { LoginUserDto, RegisterUserDto } from '../dto/auth.request.dto';
 import { AuthService } from '../services/auth.service';
@@ -28,6 +29,7 @@ export class AuthController {
     }
   }
 
+  @HttpCode(200)
   @Post('login')
   async login(@Body() loginDto: LoginUserDto): Promise<LoginUserResponseDto> {
     return this.authService.login(loginDto.username, loginDto.password);
